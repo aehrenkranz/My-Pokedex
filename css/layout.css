@@ -1,0 +1,25 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+html {
+  font-family: 'Pokemon GB';
+  src: 'C:/Windows/Fonts/Pokemon GB Regular';
+}
+
+img {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+ul {
+  scrollbar-color: gray rgb(252, 252, 252);
+  scrollbar-width: thin;
+}
