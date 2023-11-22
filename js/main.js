@@ -8,9 +8,9 @@ if(pokedexStorageJSON!==null){
     const pokeballIcon=document.createElement('img')
     const pokemonName=document.createElement('p')
     const capitalizedPokemon=currentValue.name[0].toUpperCase() +  currentValue.name.slice(1)
-    pokemonName.textContent=`${index} ${capitalizedPokemon}`
+    pokemonName.textContent=`${index+1}  ${capitalizedPokemon}`
     pokeballIcon.src='../images/pokeball.png'
-    pokeballIcon.className='marker-mobile'
+    pokeballIcon.className='marker'
     entry.appendChild(pokeballIcon)
     entry.appendChild(pokemonName)
     list.appendChild(entry)
