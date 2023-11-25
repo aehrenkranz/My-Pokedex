@@ -1,7 +1,11 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
 html {
-  font-family: "Pokemon GB";
-  src: "C:/Windows/Fonts/Pokemon GB Regular";
+  font-family: 'Pokemon GB';
+  src: 'C:/Windows/Fonts/Pokemon GB Regular';
+}
+
+.hidden {
+  display: none;
 }
 
 #desktop-l {
@@ -23,9 +27,9 @@ img {
 }
 
 .pokedex-container {
+  flex-direction: column;
   max-width: 1100px;
   display: flex;
-  justify-content: center;
   align-items: center;
   position: relative;
 }
