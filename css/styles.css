@@ -20,7 +20,7 @@ li {
 
 .pokedex-list {
   overflow: scroll;
-  font-size: 12.5px;
+  font-size: 1em;
   position: absolute;
   top: 0;
   margin-top: 40px;
@@ -52,7 +52,6 @@ li {
   }
 
   .pokedex-list {
-    font-size: 16px;
     max-width: 75%;
     max-height: 80%;
     margin: 0;
