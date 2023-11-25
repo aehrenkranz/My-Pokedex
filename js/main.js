@@ -1,6 +1,7 @@
 const pokedexStorageJSON=localStorage.getItem('pokedex-local-storage')
 let pokedexData=[]
 const list=document.querySelector('ul')
+const searchBar=document.querySelector('input')
 if(pokedexStorageJSON!==null){
   pokedexData=JSON.parse(pokedexStorageJSON)
   pokedexData.forEach((currentValue,index)=>{
@@ -14,13 +15,29 @@ if(pokedexStorageJSON!==null){
     entry.appendChild(pokeballIcon)
     entry.appendChild(pokemonName)
     list.appendChild(entry)
-   entry.addEventListener('click',()=>{highlightEntry(entry)})
-  })}
+    entry.addEventListener('click',()=>{highlightEntry(entry)})
+    searchBar.addEventListener('input',()=>{
+      handleSearch(entry)
+        }
+      )
+    }
+  )
+}
 
 const listItems=document.querySelectorAll('li')
-function highlightEntry(clicked){
-  listItems.forEach((element)=>{
-    element.classList.remove('selected')
-  })
-  clicked.classList.add('selected')
-}
+  function highlightEntry(clicked){
+    listItems.forEach((element)=>{
+      element.classList.remove('selected')
+      }
+    )
+    clicked.classList.add('selected')
+  }
+
+function handleSearch(entry){
+  if(entry.textContent.toLocaleLowerCase().includes(searchBar.value)){
+        entry.classList.remove('hidden')
+        }
+      else{
+        entry.classList.add('hidden')
+      }
+    }
