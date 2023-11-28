@@ -34,7 +34,7 @@ const listItems=document.querySelectorAll('li')
   }
 
 function handleSearch(entry){
-  if(entry.textContent.toLocaleLowerCase().includes(searchBar.value)){
+  if(entry.textContent.toLowerCase().includes(searchBar.value.toLowerCase())){
         entry.classList.remove('hidden')
         }
       else{
