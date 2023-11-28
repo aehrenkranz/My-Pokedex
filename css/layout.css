@@ -1,0 +1,40 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+html {
+  font-family: "Pokemon GB";
+  src: "C:/Windows/Fonts/Pokemon GB Regular";
+}
+
+#desktop-l {
+  display: none;
+}
+
+.viewing-container {
+  display: flex;
+  justify-content: center;
+}
+
+#pokedex-view {
+  max-width: 600px;
+  max-height: 382px;
+}
+
+img {
+  width: 100%;
+}
+
+.pokedex-container {
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+p {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+}
