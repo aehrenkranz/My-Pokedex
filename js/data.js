@@ -14,3 +14,21 @@ function getPokemon(){
 }
 
 document.addEventListener('DOMContentLoaded',getPokemon())
+
+function getPokemonByType(type){
+   const xhr=new XMLHttpRequest()
+  xhr.open('GET','https://pokeapi.co/api/v2/type/'+ type + '?limit=9999')
+  xhr.responseType='json'
+  xhr.addEventListener('load', function(){
+    xhr.response.pokemon.forEach((value)=>{
+      for(let i=0;i<listItems.length;i++){
+        if(listItems[i].textContent.toLowerCase().includes(value.pokemon.name)){
+          listItems[i].classList.remove('hidden')
+            }
+          }
+        }
+      )
+    }
+  )
+  xhr.send()
+}
