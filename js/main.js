@@ -1,9 +1,10 @@
 const pokedexStorageJSON=localStorage.getItem('pokedex-local-storage')
-let pokedexStorage=[]
+let pokedexData=[]
 const list=document.querySelector('ul')
+const searchBar=document.querySelector('input')
 if(pokedexStorageJSON!==null){
-  pokedexStorage=JSON.parse(pokedexStorageJSON)
-  pokedexStorage.forEach((currentValue,index)=>{
+  pokedexData=JSON.parse(pokedexStorageJSON)
+  pokedexData.forEach((currentValue,index)=>{
     const entry=document.createElement('li')
     const pokeballIcon=document.createElement('img')
     const pokemonName=document.createElement('p')
@@ -14,11 +15,29 @@ if(pokedexStorageJSON!==null){
     entry.appendChild(pokeballIcon)
     entry.appendChild(pokemonName)
     list.appendChild(entry)
-  })}
+    entry.addEventListener('click',()=>{highlightEntry(entry)})
+    searchBar.addEventListener('input',()=>{
+      handleSearch(entry)
+        }
+      )
+    }
+  )
+}
 
 const listItems=document.querySelectorAll('li')
-list.addEventListener('click',(event)=>{
-  event.target.closest('li').className='selected'
-  listItems.forEach((element)=>{if (event.target.closest('li')!==element){
-    element.className=''
-  }})})
+  function highlightEntry(clicked){
+    listItems.forEach((element)=>{
+      element.classList.remove('selected')
+      }
+    )
+    clicked.classList.add('selected')
+  }
+
+function handleSearch(entry){
+  if(entry.textContent.toLowerCase().includes(searchBar.value.toLowerCase())){
+        entry.classList.remove('hidden')
+        }
+      else{
+        entry.classList.add('hidden')
+      }
+    }
