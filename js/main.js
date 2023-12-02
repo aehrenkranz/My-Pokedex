@@ -10,7 +10,7 @@ function createListElements(arr){
     const pokemonName=document.createElement('p')
     const capitalizedPokemon=currentValue.name[0].toUpperCase() +  currentValue.name.slice(1)
     pokemonName.textContent=`${index+1}  ${capitalizedPokemon}`
-    pokeballIcon.src='../images/pokeball.png'
+    pokeballIcon.src='images/pokeball.png'
     pokeballIcon.className='marker'
     entry.appendChild(pokeballIcon)
     entry.appendChild(pokemonName)
@@ -86,3 +86,12 @@ function handleTypeFilter(event){
   }
 }
 typeFilterContainer.addEventListener('click',handleTypeFilter)
+
+function clearCheckboxes(){
+  typeCheckboxes.forEach((value)=>{
+      value.checked=false
+    }
+  )
+}
+
+document.addEventListener('DOMContentLoaded',clearCheckboxes())

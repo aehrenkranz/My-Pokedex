@@ -16,7 +16,7 @@ function getPokemon(){
 document.addEventListener('DOMContentLoaded',getPokemon())
 
 function getPokemonByType(type){
-   const xhr=new XMLHttpRequest()
+  const xhr=new XMLHttpRequest()
   xhr.open('GET','https://pokeapi.co/api/v2/type/'+ type + '?limit=9999')
   xhr.responseType='json'
   xhr.addEventListener('load', function(){

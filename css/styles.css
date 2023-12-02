@@ -1,5 +1,6 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
-ul {
+ul,
+.type-filter-container {
   scrollbar-color: gray rgb(252, 252, 252);
   scrollbar-width: thin;
 }
@@ -80,6 +81,7 @@ label {
 
 .type-filter-container {
   border: 1px solid gray;
+  border-radius: 4px;
   max-height: 50%;
   font-size: 0.8em;
   display: none;
@@ -128,5 +130,11 @@ label {
     right: 20px;
     top: 10px;
     height: 10%;
+  }
+
+  .type-filter-container {
+    top: 20%;
+    max-height: 75%;
+    box-shadow: none;
   }
 }
