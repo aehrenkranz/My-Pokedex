@@ -15,9 +15,10 @@ function getPokemon(){
 
 document.addEventListener('DOMContentLoaded',getPokemon())
 
+const filteredPokedex=[]
 function getPokemonByType(type){
   const xhr=new XMLHttpRequest()
-  xhr.open('GET','https://pokeapi.co/api/v2/type/'+ type + '?limit=9999')
+  xhr.open('GET','https://pokeapi.co/api/v2/type/'+ type.name + '?limit=9999')
   xhr.responseType='json'
   xhr.addEventListener('load', function(){
     xhr.response.pokemon.forEach((value)=>{
