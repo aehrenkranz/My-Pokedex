@@ -4,13 +4,14 @@ const list = document.querySelector('ul');
 const searchBar = document.querySelector('input');
 
 function createPokemonListElements(arr) {
-  arr.forEach((currentValue, index) => {
+  arr.forEach((currentValue) => {
     const entry = document.createElement('li');
     const pokeballIcon = document.createElement('img');
     const pokemonName = document.createElement('p');
     const capitalizedPokemon =
       currentValue.name[0].toUpperCase() + currentValue.name.slice(1);
-    pokemonName.textContent = `${index + 1}  ${capitalizedPokemon}`;
+    const pokemonID = currentValue.url.split('/')[6];
+    pokemonName.textContent = `${pokemonID}  ${capitalizedPokemon}`;
     pokeballIcon.src = 'images/pokeball.png';
     pokeballIcon.className = 'marker';
     entry.appendChild(pokeballIcon);
@@ -22,7 +23,6 @@ function createPokemonListElements(arr) {
 
 if (pokedexStorageJSON !== null) {
   pokedexData = JSON.parse(pokedexStorageJSON);
-
   createPokemonListElements(pokedexData);
 }
 
@@ -32,7 +32,7 @@ const weight = document.getElementById('weight');
 const backSprite = document.getElementById('back-sprite');
 const listItems = document.querySelectorAll('li');
 listItems.forEach((value, index) => {
-  value.addEventListener('click', (event) => {
+  value.addEventListener('click', () => {
     highlightEntry(value);
     const xhr = new XMLHttpRequest();
     xhr.open('GET', value.dataset.url);
@@ -76,20 +76,22 @@ filterIcon.addEventListener('click', () => {
 });
 
 const typeCheckboxes = document.querySelectorAll('.checkbox');
-
 function handleTypeFilter(event) {
+  let counter = 0;
   if (event.target.className === 'checkbox') {
+    listItems.forEach((item) => {
+      item.classList.add('hidden');
+    });
     typeCheckboxes.forEach((value) => {
       if (value.checked === true) {
-        listItems.forEach((element) => {
-          element.classList.add('hidden');
-        });
-        console.log(value)
-        getPokemonByType(value)
-
+        getPokemonByType(value);
       } else {
+        counter++;
       }
     });
+  }
+  if (counter === typeCheckboxes.length) {
+    listItems.forEach((element) => element.classList.remove('hidden'));
   }
 }
 typeFilterContainer.addEventListener('click', handleTypeFilter);
@@ -101,12 +103,3 @@ function clearCheckboxes() {
 }
 
 document.addEventListener('DOMContentLoaded', clearCheckboxes());
-
-// const filteredPokemon = getPokemonByType(value).map((value) => {
-//   for (let i = 0; i < listItems.length; i++) {
-//     if (listItems[i].textContent.toLowerCase().includes(value.pokemon.name)) {
-//       listItems[i].classList.remove('hidden');
-//     }
-//   }
-// });
-// console.log(filteredPokemon);
