@@ -65,8 +65,27 @@ function handleSearch(entry) {
   }
 }
 
-const filterIcon = document.getElementById('filter-icon');
 const typeFilterContainer = document.getElementById('type-filter-container');
+const types=['normal','fighting','flying','poison','ground','rock','bug','ghost','steel','fire','water','grass','electric','psychic','ice','dark','fairy','dragon']
+function createTypeCheckboxes(){
+  types.forEach((type)=>{
+    const label=document.createElement('label')
+    const input=document.createElement('input')
+    const labelImage=document.createElement('img')
+    labelImage.src='images/'+type+'.png'
+    labelImage.classList.add('type')
+    input.setAttribute('type','checkbox')
+    input.setAttribute('name',type)
+    input.classList.add('checkbox')
+    typeFilterContainer.appendChild(label)
+    label.appendChild(input)
+    label.appendChild(labelImage)
+  })
+}
+createTypeCheckboxes()
+
+const filterIcon = document.getElementById('filter-icon');
+;
 filterIcon.addEventListener('click', () => {
   if (typeFilterContainer.style.display === 'flex') {
     typeFilterContainer.style.display = 'none';
