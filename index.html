@@ -13,6 +13,17 @@
     <div class="row">
       <div class="viewing-container">
         <img src="images/pokedex-view.png" id="pokedex-view" />
+        <div class="sprite-container">
+          <img id="sprite" src="" >
+        </div>
+        <div class="back-sprite-container">
+          <img id="back-sprite" src="">
+        </div>
+        <div class="height-weight-container">
+          <p id="height"></p>
+          <p id="weight"></p>
+        </div>
+        <textarea disabled id="pokemon-description">asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf asdf asdf asdfa asdf asdf asdf asdf asdf asdf </textarea>
       </div>
     </div>
     <div class="row">
@@ -24,13 +35,15 @@
             type="text"
             placeholder="Search for Pokémon..."
             class="search-bar" />
-          <img src="images/search.png" class="magnifying-glass" />
+          <img src="images/filter-icon.png" class="icon" id="filter-icon">
         </div>
+      <div class="type-filter-container hidden" id="type-filter-container" hidden="hidden">
+        <p>Filter</p>
 
+      </div>
         <ul class="pokedex-list"></ul>
       </div>
     </div>
-
     <script src="js/data.js"></script>
     <script src="js/main.js"></script>
   </body>
