@@ -58,7 +58,7 @@ li {
   border-style: none;
   font-family: "Pokemon GB";
   color: #3c3434;
-  font-size: 0.8em;
+  font-size: clamp(0.7rem, 2vw, 0.7rem);
 }
 
 .icon {
@@ -98,11 +98,16 @@ label {
 }
 
 #pokemon-description {
+  font-family: "Pokemon GB";
+  color: black;
+  letter-spacing: -0.03em;
+  font-size: clamp(0.3rem, 2.7vw, 0.8rem);
   position: absolute;
   bottom: 15%;
   top: 68%;
   left: 8%;
   width: 85%;
+  height: 25%;
   resize: none;
   border: none;
 }
@@ -112,6 +117,18 @@ label {
   width: 35%;
   left: 5%;
   top: 10%;
+}
+
+.abilities-container {
+  font-size: clamp(0.05rem, 2vw, 0.7rem);
+  padding-left: 2%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 18%;
+  left: 43%;
+  width: 55%;
+  height: 9%;
 }
 
 .back-sprite-container {
@@ -125,11 +142,24 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  font-size: 2.7vw;
+  font-size: clamp(0.3rem, 2.7vw, 1rem);
   position: absolute;
   top: 43.5%;
   left: 70%;
   height: 17%;
+}
+
+.types-container {
+  height: 11.5%;
+  width: 40%;
+  display: flex;
+  position: absolute;
+  top: 29.5%;
+  left: 57%;
+}
+
+.pokemon-type {
+  flex-basis: 43%;
 }
 
 @media screen and (min-width: 864px) {
@@ -171,5 +201,9 @@ label {
     top: 20%;
     max-height: 75%;
     box-shadow: none;
+  }
+
+  .height-weight-container {
+    font-size: 1em;
   }
 }

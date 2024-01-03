@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -13,17 +13,21 @@
     <div class="row">
       <div class="viewing-container">
         <img src="images/pokedex-view.png" id="pokedex-view" />
+        <div class="abilities-container">
+          <p class="abilities-text"></p>
+        </div>
         <div class="sprite-container">
-          <img id="sprite" src="" >
+          <img id="sprite" src="" />
         </div>
         <div class="back-sprite-container">
-          <img id="back-sprite" src="">
+          <img id="back-sprite" src="" />
         </div>
+        <div class="types-container"></div>
         <div class="height-weight-container">
           <p id="height"></p>
           <p id="weight"></p>
         </div>
-        <textarea disabled id="pokemon-description">asdfasdfasdfasdfasdfasdfasdfasdfasdfasdf asdf asdf asdfa asdf asdf asdf asdf asdf asdf </textarea>
+        <textarea disabled id="pokemon-description"> </textarea>
       </div>
     </div>
     <div class="row">
@@ -35,12 +39,14 @@
             type="text"
             placeholder="Search for Pokémon..."
             class="search-bar" />
-          <img src="images/filter-icon.png" class="icon" id="filter-icon">
+          <img src="images/filter-icon.png" class="icon" id="filter-icon" />
         </div>
-      <div class="type-filter-container hidden" id="type-filter-container" hidden="hidden">
-        <p>Filter</p>
-
-      </div>
+        <div
+          class="type-filter-container hidden"
+          id="type-filter-container"
+          hidden="hidden">
+          <p>Filter</p>
+        </div>
         <ul class="pokedex-list"></ul>
       </div>
     </div>
